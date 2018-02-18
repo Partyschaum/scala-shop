@@ -2,13 +2,9 @@ package shop.domain.model
 
 import java.util.UUID
 
-class UserId(id: UUID) {
+class UserId(val id: UUID) {
   override def toString: String = {
     id.toString
-  }
-
-  def id(): UUID = {
-    id
   }
 
   override def equals(obj: scala.Any): Boolean = {
