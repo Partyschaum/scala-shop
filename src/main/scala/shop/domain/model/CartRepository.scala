@@ -6,4 +6,6 @@ trait CartRepository {
   def remove(cart: Cart): Unit
 
   def all(): List[Cart]
+
+  def findByUserId(userId: UserId): Cart
 }
