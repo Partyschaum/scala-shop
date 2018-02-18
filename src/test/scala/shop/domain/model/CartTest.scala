@@ -21,8 +21,8 @@ class CartTest extends FunSpec {
     describe("after adding two items") {
       it("contains two items") {
         val cart = fixture.aCart
-        cart.addItem(new Product("Chocolate", 1.99))
-        cart.addItem(new Product("Peanuts", 2.49))
+        cart.addItem(new Product("Chocolate", 1.99), 3)
+        cart.addItem(new Product("Peanuts", 2.49), 2)
         assert(cart.items().lengthCompare(2) == 0)
       }
     }
