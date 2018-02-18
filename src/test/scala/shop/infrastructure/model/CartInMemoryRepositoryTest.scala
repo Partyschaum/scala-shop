@@ -3,7 +3,7 @@ package shop.infrastructure.model
 import java.util.UUID
 
 import org.scalatest.FunSpec
-import shop.domain.model.{Cart, Item, UserId}
+import shop.domain.model.{Cart, Product, UserId}
 
 import scala.collection.mutable.ListBuffer
 

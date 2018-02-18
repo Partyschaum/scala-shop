@@ -1,6 +1,6 @@
 package shop.domain.model
 
-class Item(name: String, price: Double) {
+class Product(name: String, price: Double) {
   def price(): Double = {
     price
   }
