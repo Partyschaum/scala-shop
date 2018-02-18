@@ -19,6 +19,6 @@ class CartInMemoryRepository(storage: ListBuffer[Cart]) extends CartRepository{
   }
 
   override def findByUserId(userId: UserId): Cart = {
-    storage.filter(x => x.userId().equals(userId)).head
+    storage.filter(x => x.userId.equals(userId)).head
   }
 }
