@@ -18,12 +18,32 @@ class CartTest extends FunSpec {
       }
     }
 
-    describe("after adding two items") {
-      it("contains two items") {
+    describe("after adding six products") {
+      it("contains six products") {
         val cart = fixture.aCart
+        cart.addItem(new Product("Nutella", 2.99))
         cart.addItem(new Product("Chocolate", 1.99), 3)
         cart.addItem(new Product("Peanuts", 2.49), 2)
-        assert(cart.items().lengthCompare(2) == 0)
+        assert(cart.items().lengthCompare(6) == 0)
+      }
+    }
+
+    describe("remove product from cart") {
+      it("removes specified product") {
+        val cart = fixture.aCart
+        cart.addItem(new Product("Nutella", 2.99), 2)
+        cart.addItem(new Product("Chocolate", 1.99), 3)
+        cart.removeItem(new Product("Nutella", 2.99))
+        assert(cart.items().lengthCompare(4) == 0)
+      }
+
+      describe("product not in cart") {
+        it("throws exception ") {
+          val cart = fixture.aCart
+          assertThrows[NoSuchElementException] {
+            cart.removeItem(new Product("Unavailable Product", 0.99))
+          }
+        }
       }
     }
   }
